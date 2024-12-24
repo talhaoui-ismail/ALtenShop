@@ -1,0 +1,2 @@
+insert into Account values(2,'admin@admin.com','ismail','$2a$10$jQikUg2rP.uke3N53T29PuN./Gvn4RNF/aUtFRLa0mcM7Z7QTCKEa','ismail');
+insert into Product ("CODE","NAME","DESCRIPTION","CATEGORY","PRICE","QUANTITY","INVENTORY_STATUS","RATING","SHELL_ID") values ('code','name','description','category',2,1,1,3.2,4);
