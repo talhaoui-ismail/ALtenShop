@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "0f1898ca-79ba-4b2e-88be-9c042b310073",
+		"name": "Alten Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40630208"
+	},
+	"item": [
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "add New Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzUwMzQ5NTQsImV4cCI6MTczNTAzODU1NH0.G-V1TfMRl5As7-Fa5g-LF7LJXyCK26vSDEyaFoXPtmg9DSDHCy_i8vSpKUNGi_ug8tb_RVG8X7u04Fs7qHeGUQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"code\":\"1478\",\"name\":\"P1\",\"description\":\"d1\",\"image\":\"i1\",\"category\":\"c1\",\"price\":152,\"quantity\":15,\"internalReference\":\"IR1\",\"shellId\":1,\"inventoryStatusCode\":1,\"rating\":3.5   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzUwMzQ5NTQsImV4cCI6MTczNTAzODU1NH0.G-V1TfMRl5As7-Fa5g-LF7LJXyCK26vSDEyaFoXPtmg9DSDHCy_i8vSpKUNGi_ug8tb_RVG8X7u04Fs7qHeGUQ",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v1/products/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Product By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/products/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzUwMzQ5NTQsImV4cCI6MTczNTAzODU1NH0.G-V1TfMRl5As7-Fa5g-LF7LJXyCK26vSDEyaFoXPtmg9DSDHCy_i8vSpKUNGi_ug8tb_RVG8X7u04Fs7qHeGUQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"code\": \"14781\",\r\n    \"name\": \"P11\",\r\n    \"description\": \"d11\",\r\n    \"image\": \"i11\",\r\n    \"category\": \"c11\",\r\n    \"price\": 152.0,\r\n    \"quantity\": 15,\r\n    \"internalReference\": \"IR11\",\r\n    \"shellId\": 1,\r\n    \"inventoryStatusCode\": 2,\r\n    \"inventoryStatusLabel\": \"INSTOCK\",\r\n    \"rating\": 3.5,\r\n    \"createdAt\": 1735035858551,\r\n    \"updatedAt\": 1735035858551\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/products/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "add New Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzUwMzQ5NTQsImV4cCI6MTczNTAzODU1NH0.G-V1TfMRl5As7-Fa5g-LF7LJXyCK26vSDEyaFoXPtmg9DSDHCy_i8vSpKUNGi_ug8tb_RVG8X7u04Fs7qHeGUQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"ismail1\",\"firstname\":\"ismail\",\"email\":\"admin1@admin.com\",\"password\":\"1236541\"    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/accounts",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"admin@admin.com\",\"password\":\"123654\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/accounts/token",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"accounts",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
