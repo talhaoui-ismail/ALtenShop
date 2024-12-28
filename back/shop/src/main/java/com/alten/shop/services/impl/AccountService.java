@@ -20,7 +20,9 @@ public class AccountService implements IAccountService {
     }
 
     public AccountDTO findAccountByEmail(String email) {
-        return objectMapper.convertValue(accountRepository.findAccountByEmail(email),AccountDTO.class);
+        AccountDTO accountDTO= objectMapper.convertValue(accountRepository.findAccountByEmail(email),AccountDTO.class);
+        return accountDTO;
+
 
     }
 

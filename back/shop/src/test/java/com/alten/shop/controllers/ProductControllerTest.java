@@ -58,7 +58,7 @@ class ProductControllerTest {
         HttpEntity<HttpHeaders> request=new HttpEntity<>(headers);
         ResponseEntity<List<ProductDTO>> listResponseEntity=restTemplate.exchange("/api/v1/products",HttpMethod.GET,request,new ParameterizedTypeReference<List<ProductDTO>>() {});
         Assertions.assertEquals(HttpStatusCode.valueOf(200),listResponseEntity.getStatusCode());
-        Assertions.assertEquals(1,listResponseEntity.getBody().size());
+        Assertions.assertEquals(2,listResponseEntity.getBody().size());
     }
     @Test
     @Order(3)
@@ -66,7 +66,7 @@ class ProductControllerTest {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<HttpHeaders> request=new HttpEntity<>(headers);
-        ResponseEntity<ProductDTO> response=restTemplate.exchange("/api/v1/products/1",HttpMethod.GET,request,ProductDTO.class);
+        ResponseEntity<ProductDTO> response=restTemplate.exchange("/api/v1/products/2",HttpMethod.GET,request,ProductDTO.class);
         Assertions.assertEquals(HttpStatusCode.valueOf(200),response.getStatusCode());
         Assertions.assertEquals(buildProductDTO().getCode(),response.getBody().getCode());
         Assertions.assertEquals(buildProductDTO().getCategory(),response.getBody().getCategory());
@@ -84,11 +84,11 @@ class ProductControllerTest {
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.add(HttpHeaders.AUTHORIZATION,"Bearer ".concat(jwt));
         HttpEntity<ProductDTO> request=new HttpEntity<>(productDTO,headers);
-        ResponseEntity<ProductDTO> response=restTemplate.exchange("/api/v1/products/1",HttpMethod.PATCH,request,ProductDTO.class);
+        ResponseEntity<ProductDTO> response=restTemplate.exchange("/api/v1/products/2",HttpMethod.PATCH,request,ProductDTO.class);
         Assertions.assertEquals(HttpStatusCode.valueOf(200),response.getStatusCode());
-        Assertions.assertEquals(buildProductDTO().getCode(),response.getBody().getCode());
-        Assertions.assertEquals(buildProductDTO().getCategory(),response.getBody().getCategory());
-        Assertions.assertEquals(buildProductDTO().getDescription(),response.getBody().getDescription());
+        Assertions.assertEquals(productDTO.getCode(),response.getBody().getCode());
+        Assertions.assertEquals(productDTO.getCategory(),response.getBody().getCategory());
+        Assertions.assertEquals(productDTO.getDescription(),response.getBody().getDescription());
 
     }
     @Test
@@ -101,10 +101,10 @@ class ProductControllerTest {
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.add(HttpHeaders.AUTHORIZATION,"Bearer ".concat(jwt));
         HttpEntity<ProductDTO> request=new HttpEntity<>(headers);
-        Assertions.assertEquals(1,productService.getAllProducts().size());
-        ResponseEntity<String> response=restTemplate.exchange("/api/v1/products/1",HttpMethod.DELETE,request,String.class);
+        Assertions.assertEquals(2,productService.getAllProducts().size());
+        ResponseEntity<String> response=restTemplate.exchange("/api/v1/products/2",HttpMethod.DELETE,request,String.class);
         Assertions.assertEquals(HttpStatusCode.valueOf(200),response.getStatusCode());
-        Assertions.assertEquals(0,productService.getAllProducts().size());
+        Assertions.assertEquals(1,productService.getAllProducts().size());
     }
 
     private ProductDTO buildProductDTO(){
